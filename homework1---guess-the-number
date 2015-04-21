@@ -1,0 +1,29 @@
+name=input("Hi! What is your Name?")
+print("Hello " + name + "! Let's play a game!")
+print("Think of random number from 1 to 100, and I'll try to guess it!")
+first=1
+last=100
+tries=0
+while True:
+	middle=int((last+first)/2)
+	print("Is it "+str(middle)+" ?")
+	tries=tries+1
+	ans = str(input("yes/no :"))
+	if ans=='yes':
+		print("The Number is " +str(middle)+ "!")
+		print("Yeey! I got it in " +str(tries)+ " tries!")
+		if ans==str(input("Do you want to play again? (yes/no)")):
+			first=1
+			last=100
+			tries=0
+		else:
+			exit()
+	if ans=='no':
+		print("Is the number greater than ", middle,"?")
+		ans_no=str(input('yes/no:'))
+		if ans_no=='yes':
+			first=middle
+			last=last
+		if ans_no=='no':
+			first=first
+			last=middle
